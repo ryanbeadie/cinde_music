@@ -9,22 +9,18 @@
     <script src="vendors/angular-route.min.js" charset="utf-8"></script>
     <script src="scripts/client.js" charset="utf-8"></script>
     <script src="scripts/controllers/artistadd.controller.js" charset="utf-8"></script>
+    <script src="scripts/controllers/artistlist.controller.js" charset="utf-8"></script>
+    <script src="scripts/controllers/artistview.controller.js" charset="utf-8"></script>
+    <script src="scripts/controllers/venueadd.controller.js" charset="utf-8"></script>
+    <script src="scripts/controllers/venuelist.controller.js" charset="utf-8"></script>
+    <script src="scripts/controllers/venueview.controller.js" charset="utf-8"></script>
     <base href="/">
   </head>
   <body ng-app="myApp">
 <div class = "jumbotron">
       <h2>Ryan Beadie's Solo Project</h2>
 </div>
-<div>
-  <nav>
-      <ul>
-        <a class="button-Home" href="/home">HOME</a>
-        <a class="button-Profile" href="/artistlist">ARTISTS</a>
-        <a class="button-Repo" href="/venuelist">VENUES</a>
-      </ul>
-  </nav>
 
-</div>
 <main ng-view></main>
 </body>
 </html>
