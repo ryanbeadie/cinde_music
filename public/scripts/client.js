@@ -2,7 +2,7 @@
 
 var myApp = angular.module('myApp', ['ngRoute']);
 
-
+//is my location and route provider set up right?
 myApp.config(function($routeProvider, $locationProvider) {
   $routeProvider
   .when('/artistadd', {
