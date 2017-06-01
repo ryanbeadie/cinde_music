@@ -18,6 +18,19 @@ router.get('/', function (req, res) {
   });
 });
 
+router.get('/solo', function (req, res) {
+  console.log('in router.get/:id');
+  Venue.find({_id: req.query.venueId}, function (err, artist) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+    res.send(artist);
+  });
+});
+
+
+
 router.post('/', function (req, res) {
   console.log('Req body', req.body);
   var venue = new Venue(req.body);

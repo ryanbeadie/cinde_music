@@ -5,11 +5,10 @@ myApp.controller('ArtistViewController',[ '$http', '$routeParams', '$location',
   console.log('route params=',$routeParams);
   var vm= this;
 
-vm.artistDetails= [];
+  vm.artistDetails= [];
   getArtistDetails();
 
   function getArtistDetails() {
-
     console.log('In get artist details');
      $http({
        method: 'GET',
@@ -19,9 +18,7 @@ vm.artistDetails= [];
           }
      }).then(function(response) {
        console.log('response.data from artist details: ', response.data);
-
        vm.artistDetails= response.data;
      });
    }
-
 }]);//end ArtistViewController

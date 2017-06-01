@@ -11,5 +11,19 @@
   <a href="#!venuelist"><button class ="btn">Venue List</button></a>
   <a href="#!artistlist"><button class ="btn">Artist List</button></a>
 </ul>
+<div class = "container row">
+    <div ng-repeat='data in ic.venueDetails' class="col-sm-5" >
+      <li> {{data.name}} </li>
+      <li> {{data.address}} </li>
+      <li> {{data.description}} </li>
+      <li> {{data.review}} </li>
+      <li> {{data.upcomingEvent}} </li>
+      <img src="{{data.photo}}" alt="">
+    </div>
+</div>
+
+
+
+
   </body>
 </html>
