@@ -8,10 +8,22 @@
 <p>Artist View Page</p>
 <ul>
 
-  <a href="/home"><button class ="btn">HOME</button></a>
-  <a href="/venuelist"><button class ="btn">Venue List</button></a>
-  <a href="/artistlist"><button class ="btn">Artist List</button></a>
+  <a href="#!home"><button class ="btn">HOME</button></a>
+  <a href="#!venuelist"><button class ="btn">Venue List</button></a>
+  <a href="#!artistlist"><button class ="btn">Artist List</button></a>
 
 </ul>
+<div class = "container row">
+    <div ng-repeat='data in ic.artistDetails' class="col-sm-5" >
+      <li> {{data.name}} </li>
+      <li> {{data.description}} </li>
+      <li> {{data.review}} </li>
+      <li> {{data.upcomingShows}} </li>
+      <li> {{data.photo}} </li>
+
+    </div>
+</div>
+
+
   </body>
 </html>

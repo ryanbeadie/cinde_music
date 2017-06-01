@@ -13,7 +13,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     templateUrl: 'views/artistlist.html',
     controller: 'ArtistListController as ic'
   })
-  .when('/artistview', {
+  .when('/artistview/:artistId', {
     templateUrl: 'views/artistview.html',
     controller: 'ArtistViewController as ic'
   })
@@ -25,7 +25,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     templateUrl: 'views/venuelist.html',
     controller: 'VenueListController as ic'
   })
-  .when('/venueview', {
+  .when('/venueview/:venueId', {
     templateUrl: 'views/venueview.html',
     controller: 'VenueViewController as ic'
   })
@@ -33,7 +33,7 @@ myApp.config(function($routeProvider, $locationProvider) {
     templateUrl: 'views/home.html',
   }).otherwise('/home');
 
-  $locationProvider.html5Mode(true);
+  // $locationProvider.html5Mode(true);
 });
 
 

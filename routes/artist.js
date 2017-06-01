@@ -4,7 +4,20 @@ var Artist = require('../models/artist');
 
 
 router.get('/', function (req, res) {
+  console.log('in router.get /');
   Artist.find({}, function (err, artist) {
+    if (err) {
+      res.sendStatus(500);
+      return;
+    }
+    res.send(artist);
+  });
+});
+
+
+router.get('/solo', function (req, res) {
+  console.log('in router.get/:id');
+  Artist.find({_id: req.query.artistId}, function (err, artist) {
     if (err) {
       res.sendStatus(500);
       return;
