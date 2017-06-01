@@ -7,9 +7,14 @@
   <body>
 <p>Artist List Page</p>
 <ul>
-<a class="button-Home" href="/home">HOME</a>
-<a class="button-ArtistAdd" href="/artistadd">Add Artist</a>
-<a class="button-VenueList" href="/venuelist">Venue List</a>
+  <a href="/home"><button class ="btn">HOME</button></a>
+  <a href="/artistadd"><button class ="btn">Add Artist</button></a>
+  <a href="/venuelist"><button class ="btn">Venue List</button></a>
 </ul>
+<div class = "container row">
+    <div ng-repeat='data in ic.artist' class="col-sm-5" >
+      <li>{{data.name}}</li>
+    </div>
+</div>
   </body>
 </html>

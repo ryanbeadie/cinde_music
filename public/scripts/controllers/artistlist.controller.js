@@ -1,5 +1,18 @@
-myApp.controller('ArtistListController', function() {
+myApp.controller('ArtistListController',[ '$http', '$location',  function($http, $location) {
   console.log('ArtistListController loaded');
   var vm= this;
-  //call to db to get just the names of artist and display on the DOM
-});//end ArtistListController
+  getArtist();
+  vm.artist= [];
+  function getArtist() {
+
+    console.log('In get artist');
+     $http({
+       method: 'GET',
+       url: '/artist'
+     }).then(function(response) {
+       console.log('response.data from artist collection: ', response.data);
+       vm.artist= response.data;
+     });
+   }
+  //  getArtist();
+}]);//end ArtistListController

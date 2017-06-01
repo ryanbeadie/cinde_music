@@ -33,12 +33,10 @@ app.listen(port, function() {
   console.log('up 5000');
 });
 
+app.use('/venue', venue);
+app.use('/artist', artist);
 
 
 app.get('/*', function(req, res) {
   res.sendFile(path.join(__dirname, 'public/views/index.html'));
 });
-
-
-app.use('/addVenue', venue);
-app.use('/addArtist', artist);

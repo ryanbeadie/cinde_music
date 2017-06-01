@@ -7,13 +7,17 @@
   <body>
 <p>Artist Add Page</p>
 <ul>
-<a class="button-Home" href="/home">HOME</a>
-<a class="button-VenueList" href="/venuelist">Venue List</a>
-<a class="button-ArtistList" href="/artistlist">Artist List</a>
+  <a href="/home"><button class ="btn">HOME</button></a>
+  <a href="/venuelist"><button class ="btn">Venue List</button></a>
+  <a href="/artistlist"><button class ="btn">Artist List</button></a>
 </ul>
 
-<input type="text" ng-model=" ic.firstName">
-<input type="text" ng-model=" ic.lastName">
-<a class="button-Submit" ng-click="ic.addArtist()">Submit</a>
+
+<input type="text" placeholder= "Artist Name"ng-model= "ic.name">
+<input type="text" placeholder= "Description" ng-model= "ic.description">
+<input type="text" placeholder= "Reviews" ng-model= "ic.review">
+<input type="text" placeholder= "Photo URL" ng-model= "ic.photo">
+<input type="text" placeholder= "Upcoming Shows" ng-model= "ic.upcomingShows">
+<a href="/artistlist"><button class ="btn" ng-click = "ic.addArtist()">Submit</button></a>
   </body>
 </html>

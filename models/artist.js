@@ -4,8 +4,11 @@ var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
 var ArtistSchema = new Schema({
-  firstName: String,
-  lastName : String
+name: String,
+description: [String],
+review: [String],
+photo: [String],
+upcomingShows: [String]
   // lastName: { type: String, required: true }
 });
 

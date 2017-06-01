@@ -6,10 +6,17 @@
   </head>
   <body>
 <p>Venue List Page</p>
-<nav>
-<a class="button-Home" href="/home">HOME</a>
-<a class="button-VenueAdd" href="/venueadd">Add Venue</a>
-<a class="button-ArtistList" href="/artistlist">Artist List</a>
-</nav>
+<ul>
+
+<a href="/home"><button class ="btn">HOME</button></a>
+<a href="/venueadd"><button class ="btn">Add Venue</button></a>
+<a href="/artistlist"><button class ="btn">Artist List</button></a>
+
+</ul>
+<div class = "container row">
+    <div ng-repeat='data in ic.venue' class="col-sm-5" >
+      <li>{{data.name}}</li>
+    </div>
+</div>
   </body>
 </html>

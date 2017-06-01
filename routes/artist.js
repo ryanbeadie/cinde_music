@@ -3,17 +3,12 @@ var router = express.Router();
 var Artist = require('../models/artist');
 
 
-
-
-
-//copied from Antoinette repo --- filling in blanks. check to see if correct
 router.get('/', function (req, res) {
   Artist.find({}, function (err, artist) {
     if (err) {
       res.sendStatus(500);
       return;
     }
-
     res.send(artist);
   });
 });
@@ -28,7 +23,6 @@ router.post('/', function (req, res) {
       res.sendStatus(500);
       return;
     }
-
     res.sendStatus(201); //created
   });
 });

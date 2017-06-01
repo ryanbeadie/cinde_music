@@ -1,22 +1,24 @@
 myApp.controller('ArtistAddController',[ '$http', '$location',  function($http, $location) {
   console.log('ArtistAddController loaded');
   var vm= this;
-  vm.newArtist = [];
+
 
   vm.addArtist = function(){
     console.log('in function add');
     var objectToSend = {
-      firstName: vm.firstName,
-      lastName: vm.lastName
+      name: vm.name,
+      description: vm.description,
+      review: vm.review,
+      photo: vm.photo,
+      upcomingShows: vm.upcomingShows
     };//end objectToSend
 
     $http({
       method: 'POST',
-      url: '/addArtist',
+      url: '/artist',
       data: objectToSend
     }).then(function success(response) {
       console.log('response from artist add:', response);
-    });
-  };//end
-  //create artist object to send to db
+        });
+  };//end addArtist
 }]);//end ArtistAddController

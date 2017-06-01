@@ -1,7 +1,19 @@
 
-myApp.controller('VenueListController', function() {
+myApp.controller('VenueListController',[ '$http', '$location',  function($http, $location) {
   console.log('VenueListController loaded');
   var vm= this;
 
-  //call to db to get just venue name and display on the DOM
-});//end VenueListController
+  vm.venue= [];
+  function getVenue() {
+
+    console.log('In get venue');
+     $http({
+       method: 'GET',
+       url: '/venue'
+     }).then(function(response) {
+       console.log('response.data from venue collection: ', response.data);
+       vm.venue= response.data;
+     });
+   }
+   getVenue();
+}]);//end VenueListController
