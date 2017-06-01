@@ -15,9 +15,8 @@ myApp.controller('VenueAddController',[ '$http', '$location',  function($http, $
       upcomingEvent: vm.upcomingEvent
     };//end objectToSend
 
-
-console.log('Venue To Send:', objectToSend);
-
+    console.log('Venue To Send:', objectToSend);
+    
     $http({
       method: 'POST',
       url: '/venue',

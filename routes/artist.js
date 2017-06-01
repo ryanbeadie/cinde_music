@@ -2,7 +2,6 @@ var express = require('express');
 var router = express.Router();
 var Artist = require('../models/artist');
 
-
 router.get('/', function (req, res) {
   console.log('in router.get /');
   Artist.find({}, function (err, artist) {
@@ -13,7 +12,6 @@ router.get('/', function (req, res) {
     res.send(artist);
   });
 });
-
 
 router.get('/solo', function (req, res) {
   console.log('in router.get/:id');
@@ -39,7 +37,5 @@ router.post('/', function (req, res) {
     res.sendStatus(201); //created
   });
 });
-
-
 
 module.exports = router;

@@ -3,9 +3,9 @@ myApp.controller('ArtistListController',[ '$http', '$location',  function($http,
   var vm= this;
   getArtist();
   vm.artist= [];
-  function getArtist() {
 
-    console.log('In get artist');
+  function getArtist() {
+      console.log('In get artist');
      $http({
        method: 'GET',
        url: '/artist'
