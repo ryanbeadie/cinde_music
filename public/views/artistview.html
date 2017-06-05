@@ -25,6 +25,7 @@
     <div ng-repeat='description in artist.description' class="" >
       <li>{{description.content}}</li>
       <p>Added By:{{description.authorId}}</p>
+      <hr width=100% >
     </div>
     <div>
       <input type="text" placeholder= "Add A Description" ng-model= "ic.newDescription.content">
@@ -36,13 +37,14 @@
 
       <h3>Reviews</h3>
        <div ng-repeat='review in artist.review' class="" >
-        <li>New Review: {{review.content}}</li>
+        <li> {{review.content}}</li>
         <p>Added By:{{review.authorId}}</p>
+        <hr width=100% >
       </div>
       <div>
         <input type="text" placeholder= "Add A Review" ng-model= "ic.newReview.content">
         <input type="text" placeholder= "Enter User Name" ng-model= "ic.newReview.authorId">
-        <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistDetails()">Submit</button></a>
+        <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistReviews()">Submit</button></a>
       </div>
 
         <hr width=100% >
@@ -51,10 +53,11 @@
         <div ng-repeat='upcomingShows in artist.upcomingShows' class="" >
           <li>New Upcoming Shows: {{upcomingShows.content}}</li>
           <p>Added By:{{upcomingShows.authorId}}</p>
+          <hr width=100% >
         </div>
         <div>
           <input type="text" placeholder= "Add A Upcoming Show" ng-model= "ic.newUpcomingShows.content">
-          <input type="text" placeholder= "Enter User Name" ng-model= "ic.NewUpcomingShows.authorId">
+          <input type="text" placeholder= "Enter User Name" ng-model= "ic.newUpcomingShows.authorId">
           <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateUpcomingShows()">Submit</button></a>
         </div>
 
@@ -64,6 +67,7 @@
         <div ng-repeat='photo in artist.photo' class="" >
           <li> Photo:  <img src="{{photo.content}}" alt=""></li>
           <p>Added By:{{photo.authorId}}</p>
+          <hr width=100% >
         </div>
         <div>
           <input type="text" placeholder= "Add A Photo" ng-model= "ic.newPhoto.content">

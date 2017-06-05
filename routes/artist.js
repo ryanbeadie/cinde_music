@@ -39,7 +39,7 @@ router.post('/', function (req, res) {
 });
 
 
-router.put('/', function (req, res) {
+router.put('/description', function (req, res) {
   console.log('Req body', req.body);
   // var artist = new Artist(req.body);
   var artist = {
@@ -49,6 +49,28 @@ router.put('/', function (req, res) {
 
   Artist.findByIdAndUpdate(req.body._id, {$push: { description: artist }}, function (err) {
 
+    if (err) {
+      console.log('Error saving', err);
+      res.sendStatus(500);
+      return;
+    }
+    res.sendStatus(201); //created
+  });
+});
+
+
+//update artist review
+router.put('/reviews', function (req, res) {
+  console.log('in reviews put');
+  // console.log('Req body', req.body);
+  console.log('new review:', req.body.newReview);
+  // var artist = new Artist(req.body);
+  var artist = {
+    content: req.body.newReview.content,
+    authorId: req.body.newReview.authorId
+  };
+
+  Artist.findByIdAndUpdate(req.body._id, {$push: { review: artist }}, function (err) {
 
     if (err) {
       console.log('Error saving', err);
@@ -58,5 +80,31 @@ router.put('/', function (req, res) {
     res.sendStatus(201); //created
   });
 });
+
+
+//update upcomingshows
+router.put('/upcomingShows', function (req, res) {
+  console.log('in reviews put');
+  // console.log('Req body', req.body);
+  console.log('new review:', req.body.newUpcomingShows);
+  // var artist = new Artist(req.body);
+  var artist = {
+    content: req.body.newUpcomingShows.content,
+    authorId: req.body.newUpcomingShows.authorId
+  };
+
+  Artist.findByIdAndUpdate(req.body._id, {$push: { upcomingShows: artist }}, function (err) {
+
+    if (err) {
+      console.log('Error saving', err);
+      res.sendStatus(500);
+      return;
+    }
+    res.sendStatus(201); //created
+  });
+});
+
+
+
 
 module.exports = router;

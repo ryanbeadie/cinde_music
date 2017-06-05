@@ -10,8 +10,6 @@ var photoSchema = new Schema ({content: String, authorId: String});
 
 
 
-// var descriptionSchema = new Schema ({content: String, userId});
-//Need to set up schemas so they work in array
 
 var ArtistSchema = new Schema({
 name: String,
