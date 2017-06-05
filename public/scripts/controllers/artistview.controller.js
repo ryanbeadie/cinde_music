@@ -20,7 +20,7 @@ myApp.controller('ArtistViewController',[ '$http', '$routeParams', '$location',
        console.log('response.data from artist details: ', response.data);
        vm.artistDetails= response.data;
      });
-  
+
    }//end getArtistDetails()
 
 
@@ -30,6 +30,7 @@ myApp.controller('ArtistViewController',[ '$http', '$routeParams', '$location',
     console.log('in function updateArtistDetails');
 
     vm.artistDetails[0].newDetails = vm.newDescription;
+  
 
     console.log('new description =' ,vm.artistDetails[0].newDetails);
 
@@ -42,9 +43,36 @@ myApp.controller('ArtistViewController',[ '$http', '$routeParams', '$location',
        getArtistDetails().then(function (res){
          console.log('Response from getArtistDetails', res);
        });
-        // vm.updateArtist= response.data;
-            //vm.updateArtist= response.data[0].description;
-        // console.log( vm.updateArtist);
+
          });
-   };//end addArtist
+   };//end updateArtist
+
+
+  //  vm.updateArtistReviews = function(){
+  //   console.log('in function updateArtistReviews');
+   //
+  //   // vm.artistDetails[0].newDetails = vm.newDescription;
+  //   vm.artistReviews[0].newDetails = vm.newReview;
+  //   // vm.artistDetails[0].newDetails = vm.newPhoto;
+   //
+  //   console.log('new description =' ,vm.artistRviews[0].newDetails);
+   //
+  //    $http({
+  //      method: 'PUT',
+  //      url: '/artist',
+  //      data: vm.artistReviews[0]
+  //    }).then(function success(response) {
+  //      console.log('response from update artist reviews:', response);
+  //      getArtistDetails().then(function (res){
+  //        console.log('Response from updateArtistReviews', res);
+  //      });
+   //
+  //        });
+  //  };//end updateArtist
+
+
+
+
+
+
 }]);//end ArtistViewController
