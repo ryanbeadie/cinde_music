@@ -1,6 +1,10 @@
 myApp.controller('ArtistAddController',[ '$http', '$location',  function($http, $location) {
   console.log('ArtistAddController loaded');
   var vm= this;
+  vm.description = [{}];
+  vm.review= [{}];
+  vm.photo = [{}];
+  vm.upcomingShows = [{}];
 
 
   vm.addArtist = function(){

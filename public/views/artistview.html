@@ -7,19 +7,35 @@
 <body>
       <p>Artist View Page</p>
 <ul>
-  <a href="#!home"><button class ="btn">HOME</button></a>
+  <a href="#!home"><button class ="btn">Home</button></a>
   <a href="#!venuelist"><button class ="btn">Venue List</button></a>
   <a href="#!artistlist"><button class ="btn">Artist List</button></a>
 </ul>
 
 <div class = "container row">
-    <div ng-repeat='data in ic.artistDetails' class="col-sm-5" >
-      <li> {{data.name}} </li>
-      <li> {{data.description}} </li>
-      <li> {{data.review}} </li>
-      <li> {{data.upcomingShows}} </li>
-      <img src="{{data.photo}}" alt="">
-    </div>
+
+<div ng-repeat='data in ic.artistDetails' class="name" >
+      <h3> {{data.name}} </h3>
+      <li> Description:{{data.description[0].content}} </li>
+      <li> Review:{{data.review[0].content}} </li>
+      <li> Upcoming Shows:{{data.upcomingShows[0].content}} </li>
+      <li> Photo:  <img src="{{data.photo[0].content}}" alt=""></li>
+
+
+      <div ng-repeat='newData in data.description' class="newDescription" >
+        <li>New Data: {{newData.content}}</li>
+        <li>New author:{{newData.authorId}}</li>
+      </div>
+
+
+
+
+  </div>
+  <!-- <textarea rows="4" cols="50" ng-model="ic.newDescription.authorId" form="usrform">
+  Enter text here...</textarea> -->
+          <input type="text" placeholder= "Add A Description" ng-model= "ic.newDescription.content">
+          <input type="text" placeholder= "Enter User Name" ng-model= "ic.newDescription.authorId">
+          <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistDetails()">Submit</button></a>
 </div>
   </body>
 </html>

@@ -12,10 +12,11 @@
   <a href="#!artistlist"><button class ="btn">Artist List</button></a>
 </ul>
       <input type="text" placeholder= "Artist Name"ng-model= "ic.name">
-      <input type="text" placeholder= "Description" ng-model= "ic.description">
-      <input type="text" placeholder= "Reviews" ng-model= "ic.review">
-      <input type="text" placeholder= "Photo URL" ng-model= "ic.photo">
-      <input type="text" placeholder= "Upcoming Shows" ng-model= "ic.upcomingShows">
+      <input type="text" placeholder= "Description" ng-model= "ic.description[0].content">
+      <!-- <input type="text" placeholder= "Description" ng-model= "ic.description[0].authorId"> -->
+      <input type="text" placeholder= "Reviews" ng-model= "ic.review[0].content">
+      <input type="text" placeholder= "Photo URL" ng-model= "ic.photo[0].content">
+      <input type="text" placeholder= "Upcoming Shows" ng-model= "ic.upcomingShows[0].content">
     <a href="#!artistlist"><button class ="btn" ng-click = "ic.addArtist()">Submit</button></a>
   </body>
 </html>

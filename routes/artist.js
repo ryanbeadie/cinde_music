@@ -38,4 +38,25 @@ router.post('/', function (req, res) {
   });
 });
 
+
+router.put('/', function (req, res) {
+  console.log('Req body', req.body);
+  // var artist = new Artist(req.body);
+  var artist = {
+    content: req.body.newDetails.content,
+    authorId: req.body.newDetails.authorId
+  };
+
+  Artist.findByIdAndUpdate(req.body._id, {$push: { description: artist }}, function (err) {
+
+
+    if (err) {
+      console.log('Error saving', err);
+      res.sendStatus(500);
+      return;
+    }
+    res.sendStatus(201); //created
+  });
+});
+
 module.exports = router;

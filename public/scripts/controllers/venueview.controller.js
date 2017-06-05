@@ -21,4 +21,4 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
        vm.venueDetails= response.data;
      });
    }
-}]);//end VenueViewController
+}]);//end VenueViewController 
