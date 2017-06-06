@@ -10,9 +10,6 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
   vm.upcomingEvents= [];
 
 
-
-
-
   getVenueDetails();
 
   function getVenueDetails() {
@@ -26,34 +23,56 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
      }).then(function(response) {
        console.log('response.data from venue details: ', response.data);
        vm.venueDetails= response.data;
-       vm.venueReviews= response.data;//do the same for upcoming shows
+       vm.venueReviews= response.data;
        vm.upcomingEvents= response.data;
      });
    }
 
 
 
+    vm.updateVenue=[];
+
+    vm.updateVenueDescription = function(){
+      console.log('in function updateVenueDetails');
+      vm.venueDetails[0].newDetails = vm.newDescription;
+
+      console.log('new description =' ,vm.venueDetails[0]);
+
+   $http({
+     method: 'PUT',
+     url: '/venue/description',
+     data: vm.venueDetails[0]
+   }).then(function success(response) {
+      console.log('response from updatevenue:', response);
+     getVenueDetails();
+  });
+  getVenueDetails();
+  };//end updateVenueDescription
+
+  vm.updateVenueReviews = function(){
+  console.log('in function venueReviews logging vm.VenueReviews',vm.venueReviews);
+
+  vm.venueReviews[0].newReview = vm.newReview;
+
+  console.log('new description =' ,vm.venueReviews[0].newReview);
+
+   $http({
+     method: 'PUT',
+     url: '/venue/reviews',
+     data: vm.venueReviews[0]
+   }).then(function success(response) {
+     console.log('response from update venue reviews:', response);
+     getVenueDetails();
+    });
+ };//end updateVenueReviews
 
 
-vm.updateVenue=[];
-vm.updateVenueDescription = function(){
-    console.log('in function updateVenueDetails');
-vm.venueDetails[0].newDetails = vm.newDescription;
 
-console.log('new description =' ,vm.venueDetails[0]);
 
- $http({
-   method: 'PUT',
-   url: '/venue/description',
-   data: vm.venueDetails[0]
- }).then(function success(response) {
-    console.log('response from updatevenue:', response);
-   getVenueDetails().then(function (res){
-    console.log('Response from updateVenue', response);
-   });
-});
-getVenueDetails();
-};//end updateVenueDescription
+
+
+
+
 
 
 }]);//end VenueViewController

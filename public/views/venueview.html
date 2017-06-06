@@ -40,20 +40,22 @@
 
     <hr width=100% >
 
-      <!-- <h3>Reviews</h3>
-       <div ng-repeat='review in artist.review' class="" >
-        <li> {{review.content}}</li>
-        <p>Added By:{{review.authorId}}</p>
-        <hr width=100% >
-      </div>
-      <div>
-        <input type="text" placeholder= "Add A Review" ng-model= "ic.newReview.content">
-        <input type="text" placeholder= "Enter User Name" ng-model= "ic.newReview.authorId">
-        <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistReviews()">Submit</button></a>
-      </div>
+    <h3>Reviews</h3>
+     <div ng-repeat='review in venue.review' class="" >
+      <li> {{review.content}}</li>
+      <p>Added By:{{review.authorId}}</p>
+      <hr width=100% >
+    </div>
+    <div>
+      <input type="text" placeholder= "Add A Review" ng-model= "ic.newReview.content">
+      <input type="text" placeholder= "Enter User Name" ng-model= "ic.newReview.authorId">
+      <button class ="btn" ng-click = "ic.updateVenueReviews()">Submit</button>
+    </div>
 
-        <hr width=100% >
 
+
+
+<!--
       <h3>Upcoming Shows</h3>
         <div ng-repeat='upcomingShows in artist.upcomingShows' class="" >
           <li>New Upcoming Shows: {{upcomingShows.content}}</li>
@@ -80,7 +82,7 @@
           <a href="#!artistlist"><button class ="btn" ng-click = "ic.updatePhoto()">Submit</button></a>
         </div>
 
-      <hr width=100% > -->
+      <hr width=100% > --> -->
 
 
       <!-- <textarea rows="4" cols="50" ng-model="ic.newDescription.authorId" form="usrform">
