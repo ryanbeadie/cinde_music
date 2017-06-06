@@ -24,7 +24,7 @@ router.get('/solo', function (req, res) {
 });
 
 router.post('/', function (req, res) {
-  console.log('Req body', req.body);
+  console.log('Req body in post', req.body);
   var venue = new Venue(req.body);
   venue.save(function (err) {
     if (err) {
@@ -35,5 +35,36 @@ router.post('/', function (req, res) {
     res.sendStatus(201); //created
   });
 });
+
+
+router.put('/description', function (req, res) {
+  console.log('Req body', req.body);
+  // var artist = new Artist(req.body);
+  var artist = {
+    content: req.body.newDetails.content,
+    authorId: req.body.newDetails.authorId
+  };
+
+  Venue.findByIdAndUpdate(req.body._id, {$push: { description: venue }}, function (err) {
+
+    if (err) {
+      console.log('Error saving', err);
+      res.sendStatus(500);
+      return;
+    }
+    res.sendStatus(201); //created
+  });
+});
+
+
+
+
+
+
+
+
+
+
+
 
 module.exports = router;

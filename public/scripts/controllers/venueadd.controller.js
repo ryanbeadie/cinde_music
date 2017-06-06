@@ -2,10 +2,14 @@
 myApp.controller('VenueAddController',[ '$http', '$location',  function($http, $location) {
   console.log('VenueAddController loaded');
   var vm= this;
+  vm.description = [{}];
+  vm.review= [{}];
+  vm.photo = [{}];
+  vm.upcomingEvent = [{}];
 
 
   vm.addVenue = function(){
-    console.log('in function add');
+    console.log('in venue add');
     var objectToSend = {
       name: vm.name,
       address: vm.address,
@@ -16,7 +20,7 @@ myApp.controller('VenueAddController',[ '$http', '$location',  function($http, $
     };//end objectToSend
 
     console.log('Venue To Send:', objectToSend);
-    
+
     $http({
       method: 'POST',
       url: '/venue',

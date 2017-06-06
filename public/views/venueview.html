@@ -11,15 +11,98 @@
   <a href="#!venuelist"><button class ="btn">Venue List</button></a>
   <a href="#!artistlist"><button class ="btn">Artist List</button></a>
 </ul>
-<div class = "container row">
-    <div ng-repeat='data in ic.venueDetails' class="col-sm-5" >
-      <li> {{data.name}} </li>
-      <li> {{data.address}} </li>
-      <li> {{data.description}} </li>
+
+    <div ng-repeat='venue in ic.venueDetails' class="" >
+      <h1> {{venue.name}} </h1>
+      <h1> {{venue.address}} </h1>
+        <hr width=100% >
+
+      <!-- <li> {{data.description}} </li>
       <li> {{data.review}} </li>
       <li> {{data.upcomingEvent}} </li>
-      <img src="{{data.photo}}" alt="">
+      <img src="{{data.photo}}" alt=""> -->
+
+
+
+
+
+  <h3>Describe Venue</h3>
+    <div ng-repeat='description in venue.description' class="" >
+      <li>{{description.content}}</li>
+      <p>Added By:{{description.authorId}}</p>
+      <hr width=100% >
     </div>
+    <div>
+      <input type="text" placeholder= "Add A Description" ng-model= "ic.newDescription.content">
+      <input type="text" placeholder= "Enter User Name" ng-model= "ic.newDescription.authorId">
+      <button class ="btn" ng-click = "ic.updateVenueDescription()">Submit</button>
+    </div>
+
+    <hr width=100% >
+
+      <!-- <h3>Reviews</h3>
+       <div ng-repeat='review in artist.review' class="" >
+        <li> {{review.content}}</li>
+        <p>Added By:{{review.authorId}}</p>
+        <hr width=100% >
+      </div>
+      <div>
+        <input type="text" placeholder= "Add A Review" ng-model= "ic.newReview.content">
+        <input type="text" placeholder= "Enter User Name" ng-model= "ic.newReview.authorId">
+        <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistReviews()">Submit</button></a>
+      </div>
+
+        <hr width=100% >
+
+      <h3>Upcoming Shows</h3>
+        <div ng-repeat='upcomingShows in artist.upcomingShows' class="" >
+          <li>New Upcoming Shows: {{upcomingShows.content}}</li>
+          <p>Added By:{{upcomingShows.authorId}}</p>
+          <hr width=100% >
+        </div>
+        <div>
+          <input type="text" placeholder= "Add A Upcoming Show" ng-model= "ic.newUpcomingShows.content">
+          <input type="text" placeholder= "Enter User Name" ng-model= "ic.newUpcomingShows.authorId">
+          <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateUpcomingShows()">Submit</button></a>
+        </div>
+
+          <hr width=100% >
+
+      <h3>Photos</h3>
+        <div ng-repeat='photo in artist.photo' class="" >
+          <li> Photo:  <img src="{{photo.content}}" alt=""></li>
+          <p>Added By:{{photo.authorId}}</p>
+          <hr width=100% >
+        </div>
+        <div>
+          <input type="text" placeholder= "Add A Photo" ng-model= "ic.newPhoto.content">
+          <input type="text" placeholder= "Enter User Name" ng-model= "ic.newPhoto.authorId">
+          <a href="#!artistlist"><button class ="btn" ng-click = "ic.updatePhoto()">Submit</button></a>
+        </div>
+
+      <hr width=100% > -->
+
+
+      <!-- <textarea rows="4" cols="50" ng-model="ic.newDescription.authorId" form="usrform">
+      Enter text here...</textarea> -->
+        <!-- <input type="text" placeholder= "Add A Description" ng-model= "ic.newDescription.content">
+        <input type="text" placeholder= "Enter User Name" ng-model= "ic.newDescription.authorId">
+        <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistDetails()">Submit</button></a> -->
+
+
+
 </div>
+
+
+
+
+
+
+
+
+
+
+
+
   </body>
 </html>

@@ -13,11 +13,12 @@
 </ul>
 
 <input type="text" placeholder= "Venue Name"ng-model= "ic.name">
-<input type="text" placeholder= "Adress" ng-model= "ic.address">
-<input type="text" placeholder= "Description" ng-model= "ic.description">
-<input type="text" placeholder= "Reviews and Tips" ng-model= "ic.review">
-<input type="text" placeholder= "Photo URL" ng-model= "ic.photo">
-<input type="text" placeholder= "Upcoming Events" ng-model= "ic.upcomingEvent">
+<input type="text" placeholder= "Address" ng-model= "ic.address">
+<input type="text" placeholder= "Description" ng-model= "ic.description[0].content">
+<input type="text" placeholder= "Reviews and Tips" ng-model= "ic.review[0].content">
+<input type="text" placeholder= "Photo URL" ng-model= "ic.photo[0].content">
+<input type="text" placeholder= "Upcoming Events" ng-model= "ic.upcomingEvent[0].content">
+<!-- <input type="text" placeholder= "Added By" ng-model= "ic.[0].NEW SCEMAcontent"> -->
 <!-- <button class= "btn" ng-click= "ic.addVenue()">Submit</button> -->
 <a href="#!venuelist"><button class ="btn" ng-click = "ic.addVenue()">Submit</button></a>
   </body>

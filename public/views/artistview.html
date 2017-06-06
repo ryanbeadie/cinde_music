@@ -12,14 +12,10 @@
   <a href="#!artistlist"><button class ="btn">Artist List</button></a>
 </ul>
 
-
-
-
   <div ng-repeat='artist in ic.artistDetails' class="" >
       <h1> {{artist.name}} </h1>
 
     <hr width=100% >
-
 
   <h3>Describe Artist</h3>
     <div ng-repeat='description in artist.description' class="" >
@@ -30,7 +26,7 @@
     <div>
       <input type="text" placeholder= "Add A Description" ng-model= "ic.newDescription.content">
       <input type="text" placeholder= "Enter User Name" ng-model= "ic.newDescription.authorId">
-      <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistDetails()">Submit</button></a>
+      <button class ="btn" ng-click = "ic.updateArtistDetails()">Submit</button>
     </div>
 
     <hr width=100% >
@@ -44,7 +40,7 @@
       <div>
         <input type="text" placeholder= "Add A Review" ng-model= "ic.newReview.content">
         <input type="text" placeholder= "Enter User Name" ng-model= "ic.newReview.authorId">
-        <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistReviews()">Submit</button></a>
+        <button class ="btn" ng-click = "ic.updateArtistReviews()">Submit</button>
       </div>
 
         <hr width=100% >
@@ -58,7 +54,7 @@
         <div>
           <input type="text" placeholder= "Add A Upcoming Show" ng-model= "ic.newUpcomingShows.content">
           <input type="text" placeholder= "Enter User Name" ng-model= "ic.newUpcomingShows.authorId">
-          <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateUpcomingShows()">Submit</button></a>
+          <button class ="btn" ng-click = "ic.updateUpcomingShows()">Submit</button>
         </div>
 
           <hr width=100% >
@@ -72,7 +68,7 @@
         <div>
           <input type="text" placeholder= "Add A Photo" ng-model= "ic.newPhoto.content">
           <input type="text" placeholder= "Enter User Name" ng-model= "ic.newPhoto.authorId">
-          <a href="#!artistlist"><button class ="btn" ng-click = "ic.updatePhoto()">Submit</button></a>
+          <button class ="btn" ng-click = "ic.updatePhoto()">Submit</button>
         </div>
 
       <hr width=100% >

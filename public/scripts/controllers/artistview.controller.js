@@ -30,7 +30,7 @@ myApp.controller('ArtistViewController',[ '$http', '$routeParams', '$location',
 
 
 
-   vm.updateArtist=[];
+  //  vm.updateArtist=[];
    vm.updateArtistDetails = function(){
         console.log('in function updateArtistDetails');
    vm.artistDetails[0].newDetails = vm.newDescription;
@@ -44,14 +44,15 @@ myApp.controller('ArtistViewController',[ '$http', '$routeParams', '$location',
      }).then(function success(response) {
        console.log('response from update artist:', response);
        getArtistDetails().then(function (res){
-         console.log('Response from getArtistDetails', res);
+         console.log('Response from getArtistDetails', response);
        });
     });
+    getArtistDetails();
    };//end updateArtist
 
 
 
-    // vm.artistReviews= [];
+
     vm.updateArtistReviews = function(){
     console.log('in function updateArtistReviews logging vm.artistReviews',vm.artistReviews);
 
