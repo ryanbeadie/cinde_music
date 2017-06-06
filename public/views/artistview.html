@@ -66,8 +66,9 @@
           <hr width=100% >
         </div>
         <div>
-          <input type="text" placeholder= "Add A Photo" ng-model= "ic.newPhoto.content">
+          <!-- <input type="text" placeholder= "Add A Photo" ng-model= "ic.newPhoto.content"> -->
           <input type="text" placeholder= "Enter User Name" ng-model= "ic.newPhoto.authorId">
+          <button class ="btn" ng-click = "ic.showPicker()">Upload Photo</button>
           <button class ="btn" ng-click = "ic.updatePhoto()">Submit</button>
         </div>
 

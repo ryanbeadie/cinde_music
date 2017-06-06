@@ -17,14 +17,6 @@
       <h1> {{venue.address}} </h1>
         <hr width=100% >
 
-      <!-- <li> {{data.description}} </li>
-      <li> {{data.review}} </li>
-      <li> {{data.upcomingEvent}} </li>
-      <img src="{{data.photo}}" alt=""> -->
-
-
-
-
 
   <h3>Describe Venue</h3>
     <div ng-repeat='description in venue.description' class="" >
@@ -52,25 +44,21 @@
       <button class ="btn" ng-click = "ic.updateVenueReviews()">Submit</button>
     </div>
 
+    <h3>Upcoming Events</h3>
+      <div ng-repeat='upcomingEvent in venue.upcomingEvent' class="" >
+        <li>Upcoming Events: {{upcomingEvent.content}}</li>
+        <p>Added By:{{upcomingEvent.authorId}}</p>
+        <hr width=100% >
+      </div>
+      <div>
+        <input type="text" placeholder= "Add A Upcoming Event" ng-model= "ic.newUpcomingEvent.content">
+        <input type="text" placeholder= "Enter User Name" ng-model= "ic.newUpcomingEvent.authorId">
+        <button class ="btn" ng-click = "ic.updateUpcomingEvent()">Submit</button>
+      </div>
 
+<hr width=100% >
 
-
-<!--
-      <h3>Upcoming Shows</h3>
-        <div ng-repeat='upcomingShows in artist.upcomingShows' class="" >
-          <li>New Upcoming Shows: {{upcomingShows.content}}</li>
-          <p>Added By:{{upcomingShows.authorId}}</p>
-          <hr width=100% >
-        </div>
-        <div>
-          <input type="text" placeholder= "Add A Upcoming Show" ng-model= "ic.newUpcomingShows.content">
-          <input type="text" placeholder= "Enter User Name" ng-model= "ic.newUpcomingShows.authorId">
-          <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateUpcomingShows()">Submit</button></a>
-        </div>
-
-          <hr width=100% >
-
-      <h3>Photos</h3>
+      <!-- <h3>Photos</h3>
         <div ng-repeat='photo in artist.photo' class="" >
           <li> Photo:  <img src="{{photo.content}}" alt=""></li>
           <p>Added By:{{photo.authorId}}</p>
@@ -82,7 +70,7 @@
           <a href="#!artistlist"><button class ="btn" ng-click = "ic.updatePhoto()">Submit</button></a>
         </div>
 
-      <hr width=100% > --> -->
+      <hr width=100% > -->
 
 
       <!-- <textarea rows="4" cols="50" ng-model="ic.newDescription.authorId" form="usrform">
@@ -94,17 +82,6 @@
 
 
 </div>
-
-
-
-
-
-
-
-
-
-
-
 
   </body>
 </html>

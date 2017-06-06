@@ -78,6 +78,28 @@ router.put('/reviews', function (req, res) {
   });
 });
 
+router.put('/upcomingevents', function (req, res) {
+  console.log('in new event put');
+  // console.log('Req body', req.body);
+  console.log('new event:', req.body.newUpcomingEvent);
+  // var artist = new Artist(req.body);
+  var venue = {
+    content: req.body.newUpcomingEvent.content,
+    authorId: req.body.newUpcomingEvent.authorId
+  };
+
+  Venue.findByIdAndUpdate(req.body._id, {$push: { upcomingEvent: venue }}, function (err) {
+
+    if (err) {
+      console.log('Error saving', err);
+      res.sendStatus(500);
+      return;
+    }
+    res.sendStatus(201); //created
+  });
+});
+
+
 
 
 

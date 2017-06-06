@@ -88,7 +88,41 @@ myApp.controller('ArtistViewController',[ '$http', '$routeParams', '$location',
         console.log('Response from updateArtistReviews', res);
       });
      });
-   };//end updateArtistReview
+   };//end updateUpcomingShows
+
+   // uploading an image to filestack
+    vm.uploadImg = filestack.init('AUz2UHIiSlKQwrkbaRwISz');
+    vm.showPicker = function() {
+      vm.uploadImg.pick({
+      }).then(function(response){
+        console.log('upload this img', (response.filesUploaded[0].url));
+        vm.img = response.filesUploaded[0].url;
+        //this needs to be sent to db which equals vm.photo
+        console.log('vm.img->', vm.img);
+        $scope.$apply();// trigger the digest cycle or will have to click to show that it's populated
+      });
+    };// end showPicker
+
+    vm.updatePhoto = function(){
+
+    vm.Photo[0].newPhoto = vm.newPhoto;
+
+    console.log('new photo =' ,vm.photo[0].newPhoto);
+
+     $http({
+       method: 'PUT',
+       url: '/artist/photo',
+       data: vm.Photo[0]
+     }).then(function success(response) {
+       console.log('response from update artist photo:', response);
+       getArtistDetails().then(function (res){
+         console.log('Response from updateArtistReviews', res);
+       });
+      });
+    };//end updateUpcomingShows
+
+
+
 
 
 

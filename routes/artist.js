@@ -104,6 +104,27 @@ router.put('/upcomingShows', function (req, res) {
   });
 });
 
+//update photo
+router.put('/photo', function (req, res) {
+  console.log('in photo put');
+  // console.log('Req body', req.body);
+  console.log('new photo:', req.body.photo);
+  // var artist = new Artist(req.body);
+  var artist = {
+    content: req.body.photo.content,
+    authorId: req.body.photo.authorId
+  };
+
+  Artist.findByIdAndUpdate(req.body._id, {$push: { photo: artist }}, function (err) {
+
+    if (err) {
+      console.log('Error saving', err);
+      res.sendStatus(500);
+      return;
+    }
+    res.sendStatus(201); //created
+  });
+});
 
 
 

@@ -7,7 +7,7 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
 
   vm.venueDetails= [];
   vm.venueReviews= [];
-  vm.upcomingEvents= [];
+  vm.upcomingEvent= [];
 
 
   getVenueDetails();
@@ -24,7 +24,7 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
        console.log('response.data from venue details: ', response.data);
        vm.venueDetails= response.data;
        vm.venueReviews= response.data;
-       vm.upcomingEvents= response.data;
+       vm.upcomingEvent= response.data;
      });
    }
 
@@ -67,7 +67,21 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
  };//end updateVenueReviews
 
 
+ vm.updateUpcomingEvent = function(){
 
+ vm.upcomingEvent[0].newUpcomingEvent = vm.newUpcomingEvent;
+
+ console.log('new event =' ,vm.upcomingEvent[0].newUpcomingEvent);
+
+  $http({
+    method: 'PUT',
+    url: '/venue/upcomingevents',
+    data: vm.upcomingEvent[0]
+  }).then(function success(response) {
+    console.log('response from update venue events:', response);
+    getVenueDetails();
+   });
+ };//end updateUpcomingShows
 
 
 
