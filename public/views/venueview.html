@@ -13,6 +13,20 @@
       <h1> {{venue.address}} </h1>
         <hr width=100% >
 
+        <h3>Photos</h3>
+          <div ng-repeat='photo in venue.photo' class="col-sm-2" >
+              <img src="{{photo.content}}" class="thumbnail" height="100" width="100" />
+              <p>Added By:{{photo.authorId}}</p>
+          </div>
+              <hr width=100% >
+          <div>
+            <!-- <input type="text" placeholder= "Add A Photo" ng-model= "ic.newPhoto.content"> -->
+            <input type="text" placeholder= "Enter User Name" ng-model= "ic.newPhoto.authorId">
+            <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
+            <!-- <button class ="btn" ng-click = "ic.updatePhoto()">Submit</button> -->
+          </div>
+
+        <hr width=100% >
 
   <h3>Describe Venue</h3>
     <div ng-repeat='description in venue.description' class="" >
@@ -55,22 +69,6 @@
 <hr width=100% >
 
 
-<h3>Photos</h3>
-  <div ng-repeat='photo in venue.photo' class="" >
-    <li> Photo:  <img src="{{photo.content}}" style= "width: 100px; height: 100px;" alt=""></li>
-    <!-- <size down img to a small scale in some type of row then make it a href new window> -->
-    <!-- can i put the posted by on top of the img? -->
-    <p>Added By:{{photo.authorId}}</p>
-    <hr width=100% >
-  </div>
-  <div>
-    <!-- <input type="text" placeholder= "Add A Photo" ng-model= "ic.newPhoto.content"> -->
-    <input type="text" placeholder= "Enter User Name" ng-model= "ic.newPhoto.authorId">
-    <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
-    <!-- <button class ="btn" ng-click = "ic.updatePhoto()">Submit</button> -->
-  </div>
-
-<hr width=100% >
 
       <!-- <textarea rows="4" cols="50" ng-model="ic.newDescription.authorId" form="usrform">
       Enter text here...</textarea> -->

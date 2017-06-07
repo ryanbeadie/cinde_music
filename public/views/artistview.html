@@ -5,7 +5,7 @@
     <title>ArtistView</title>
   </head>
 <body>
-      
+
 
 
   <div ng-repeat='artist in ic.artistDetails' class="" >
@@ -15,9 +15,10 @@
 
 
     <h3>Photos</h3>
-      <div ng-repeat='photo in artist.photo' class="" >
-        <li> Photo:  <img src="{{photo.content}}" style= "width: 100px; height: 100px;" alt=""></li>
-        <!-- <size down img to a small scale in some type of row then make it a href new window> -->
+      <div ng-repeat='photo in artist.photo' class="col-sm-2" >
+
+        <img src="{{photo.content}}" class="thumbnail" height="100" width="100" />
+
         <!-- can i put the posted by on top of the img? -->
         <p>Added By:{{photo.authorId}}</p>
         <hr width=100% >
