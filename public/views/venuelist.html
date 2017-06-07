@@ -5,16 +5,10 @@
     <title>VenueList</title>
   </head>
   <body>
-<p>Venue List Page</p>
-<ul>
 
-<a href="#!home"><button class ="btn">HOME</button></a>
-<a href="#!venueadd"><button class ="btn">Add Venue</button></a>
-<a href="#!artistlist"><button class ="btn">Artist List</button></a>
 
-</ul>
 <div class = "container row">
-    <div ng-repeat='data in ic.venue' class="col-sm-5" >
+    <div ng-repeat='data in ic.venue' class="col-sm-6" >
           <a ng-href="#!venueview/{{data._id}}"> {{data.name}} </a>
     </div>
 </div>
