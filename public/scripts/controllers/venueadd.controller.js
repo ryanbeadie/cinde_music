@@ -1,10 +1,10 @@
 
-myApp.controller('VenueAddController',[ '$http', '$location',  function($http, $location) {
+myApp.controller('VenueAddController',[ '$http', '$location','$scope',  function($http, $location, $scope) {
   console.log('VenueAddController loaded');
   var vm= this;
   vm.description = [{}];
   vm.review= [{}];
-  vm.photo = [{}];
+  vm.photo = [];
   vm.upcomingEvent = [{}];
 
 
@@ -29,4 +29,30 @@ myApp.controller('VenueAddController',[ '$http', '$location',  function($http, $
       console.log('response from venue add:', response);
     });
   };//end addVenue
+
+
+  vm.uploadImg = filestack.init('AUz2UHIiSlKQwrkbaRwISz');
+
+
+  vm.uploadPhoto = function() {
+    vm.uploadImg.pick({
+    }).then(function(response){
+
+      console.log('upload this img', (response.filesUploaded[0].url));
+      vm.photo.push({content:response.filesUploaded[0].url});
+      $scope.$apply();// trigger the digest cycle or will have to click to show that it's populated
+    });
+
+  };// end uploadphoto
+
+
+
+
+
+
+
+
+
+
+
 }]);//end VenueAddController

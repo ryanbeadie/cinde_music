@@ -3,7 +3,7 @@ myApp.controller('ArtistAddController',[ '$http', '$location',  function($http, 
   var vm= this;
   vm.description = [{}];
   vm.review= [{}];
-  vm.photo = [{}];
+  vm.photo = [];
   vm.upcomingShows = [{}];
 
 
@@ -25,4 +25,22 @@ myApp.controller('ArtistAddController',[ '$http', '$location',  function($http, 
       console.log('response from artist add:', response);
         });
   };//end addArtist
+
+  vm.uploadImg = filestack.init('AUz2UHIiSlKQwrkbaRwISz');
+
+
+  vm.uploadPhoto = function() {
+    vm.uploadImg.pick({
+    }).then(function(response){
+
+      console.log('upload this img', (response.filesUploaded[0].url));
+      vm.photo.push({content:response.filesUploaded[0].url});
+      $scope.$apply();// trigger the digest cycle or will have to click to show that it's populated
+    });
+
+  };// end uploadphoto
+
+
+
+
 }]);//end ArtistAddController

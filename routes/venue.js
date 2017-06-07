@@ -99,6 +99,29 @@ router.put('/upcomingevents', function (req, res) {
   });
 });
 
+//update photo
+router.put('/photo', function (req, res) {
+  console.log('in photo put');
+
+  console.log('new photo:', req.body.newPhoto);
+
+  var venue = {
+    content: req.body.newPhoto.content,
+    authorId: req.body.newPhoto.authorId
+  };
+
+  console.log('venue=',venue);
+
+  Venue.findByIdAndUpdate(req.body._id, {$push: { photo: venue }}, function (err) {
+
+    if (err) {
+      console.log('Error saving', err);
+      res.sendStatus(500);
+      return;
+    }
+    res.sendStatus(201); //created
+  });
+});
 
 
 

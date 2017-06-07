@@ -1,6 +1,6 @@
-myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
+myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$scope',
 
-  function($http, $routeParams, $location ) {
+  function($http, $routeParams, $location, $scope ) {
   console.log('VenueViewController loaded');
   console.log('route params=',$routeParams);
   var vm = this;
@@ -8,6 +8,7 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
   vm.venueDetails= [];
   vm.venueReviews= [];
   vm.upcomingEvent= [];
+  vm.venuePhoto= [];
 
 
   getVenueDetails();
@@ -25,6 +26,7 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
        vm.venueDetails= response.data;
        vm.venueReviews= response.data;
        vm.upcomingEvent= response.data;
+       vm.venuePhoto= response.data;
      });
    }
 
@@ -83,7 +85,35 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location',
    });
  };//end updateUpcomingShows
 
+ vm.uploadImg = filestack.init('AUz2UHIiSlKQwrkbaRwISz');
 
+
+ vm.uploadPhoto = function() {
+   vm.uploadImg.pick({
+   }).then(function(response){
+
+     console.log('upload this img', (response.filesUploaded[0].url));
+
+     vm.newPhoto.content=(response.filesUploaded[0].url);
+     vm.venuePhoto[0].newPhoto= vm.newPhoto;
+
+     console.log('venuePhoto[0]', vm.venuePhoto[0]);
+
+
+     $http({
+       method: 'PUT',
+       url: '/venue/photo',
+       data: vm.venuePhoto[0]
+
+     }).then(function success(response) {
+       console.log('response from update artist photo:', response);
+       getVenueDetails();
+      });
+
+     $scope.$apply();// trigger the digest cycle or will have to click to show that it's populated
+   });
+
+ };// end uploadphoto
 
 
 
