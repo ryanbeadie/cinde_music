@@ -107,13 +107,15 @@ router.put('/upcomingShows', function (req, res) {
 //update photo
 router.put('/photo', function (req, res) {
   console.log('in photo put');
-  // console.log('Req body', req.body);
-  console.log('new photo:', req.body.photo);
-  // var artist = new Artist(req.body);
+
+  console.log('new photo:', req.body.newPhoto);
+
   var artist = {
-    content: req.body.photo.content,
-    authorId: req.body.photo.authorId
+    content: req.body.newPhoto.content,
+    authorId: req.body.newPhoto.authorId
   };
+
+  console.log('artist=',artist);
 
   Artist.findByIdAndUpdate(req.body._id, {$push: { photo: artist }}, function (err) {
 
