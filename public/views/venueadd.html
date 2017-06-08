@@ -5,18 +5,22 @@
     <title>VenueAdd</title>
   </head>
   <body>
-<p>Venue Add Page</p>
-
-
-<input type="text" placeholder= "Venue Name"ng-model= "ic.name">
-<input type="text" placeholder= "Address" ng-model= "ic.address">
-<input type="text" placeholder= "Description" ng-model= "ic.description[0].content">
-<input type="text" placeholder= "Reviews and Tips" ng-model= "ic.review[0].content">
-<!-- <input type="text" placeholder= "Photo URL" ng-model= "ic.photo[0].content"> -->
-  <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
-<input type="text" placeholder= "Upcoming Events" ng-model= "ic.upcomingEvent[0].content">
-<!-- <input type="text" placeholder= "Added By" ng-model= "ic.[0].NEW SCEMAcontent"> -->
-<!-- <button class= "btn" ng-click= "ic.addVenue()">Submit</button> -->
-<a href="#!venuelist"><button class ="btn" ng-click = "ic.addVenue()">Submit</button></a>
+    <div id="left"></div>
+    <div id="right"></div>
+    <div class="addVenue">
+      <input type="text" size= "120" placeholder= "Venue Name"ng-model= "ic.name">
+      <br>
+      <input type="text"size= "120" placeholder= "Address" ng-model= "ic.address">
+      <br>
+      <input type="text" size= "120" placeholder= "Description" ng-model= "ic.description[0].content">
+      <br>
+      <input type="text" size= "120" placeholder= "Reviews and Tips" ng-model= "ic.review[0].content">
+      <br>
+      <input type="text" size= "120"placeholder= "Upcoming Events" ng-model= "ic.upcomingEvent[0].content">
+      <br>
+      <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
+      <br>
+      <a href="#!venuelist"><button class ="btn" ng-click = "ic.addVenue()">Submit</button></a>
+  </div>
   </body>
 </html>

@@ -11,6 +11,7 @@ myApp.controller('VenueAddController',[ '$http', '$location','$scope',  function
   vm.addVenue = function(){
     console.log('in venue add');
     var objectToSend = {
+    
       name: vm.name,
       address: vm.address,
       description: vm.description,

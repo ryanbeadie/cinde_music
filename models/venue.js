@@ -10,6 +10,7 @@ var upcomingEventSchema = new Schema ({content: String, authorId: String});
 var photoSchema = new Schema ({content: String, authorId: String});
 
 var VenueSchema = new Schema({
+
   name: String,
   address: String,
   description:[descriptionSchema],

@@ -7,9 +7,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <script src="vendors/angular.min.js" charset="utf-8"></script>
     <script src="vendors/angular-route.min.js" charset="utf-8"></script>
-
     <script type="text/javascript" src="https://static.filestackapi.com/v3/filestack.js"></script>
-
     <script src="scripts/client.js" charset="utf-8"></script>
     <script src="scripts/controllers/artistadd.controller.js" charset="utf-8"></script>
     <script src="scripts/controllers/artistlist.controller.js" charset="utf-8"></script>
@@ -17,22 +15,31 @@
     <script src="scripts/controllers/venueadd.controller.js" charset="utf-8"></script>
     <script src="scripts/controllers/venuelist.controller.js" charset="utf-8"></script>
     <script src="scripts/controllers/venueview.controller.js" charset="utf-8"></script>
+    <!-- fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Bowlby+One" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+
+
+
     <!-- <base href="/"> -->
   </head>
   <body ng-app="myApp">
 <div class = "jumbotron">
       <h2>C_indie Music</h2>
 </div>
-<div>
+<div class="buttons">
   <ul>
     <a href="#!home"><button class ="btn">HOME</button></a>
     <a href="#!venuelist"><button class ="btn">Venue List</button></a>
     <a href="#!artistlist"><button class ="btn">Artist List</button></a>
     <a href="#!venueadd"><button class ="btn">Add Venue</button></a>
     <a href="#!artistadd"><button class ="btn">Add Artist</button></a>
-    <button class = "" onclick='window.open("http://kfai.org/sites/default/stream/jplayer.html" ,  "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" )'><img src="https://upload.wikimedia.org/wikipedia/en/7/79/KFAI_logo.png" style="width:50px; height:50px"></button>
+    <button class = "kfai" onclick='window.open("http://kfai.org/sites/default/stream/jplayer.html" ,  "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" )'><img src="https://upload.wikimedia.org/wikipedia/en/7/79/KFAI_logo.png" style="width:50px; height:50px; "></button>
+</ul>
 
-  </ul>
+
 </div>
   <main ng-view></main>
 </body>
