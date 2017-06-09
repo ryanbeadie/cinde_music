@@ -5,36 +5,39 @@
     <title>ArtistView</title>
   </head>
 <body>
-
-
-
+  <div id="left"></div>
+  <div id="right"></div>
   <div ng-repeat='artist in ic.artistDetails' class="" >
       <h1> {{artist.name}} </h1>
+      <div class="line"></div>
+      <h3>Photos</h3>
+      <div class="line"></div>
+      <div ng-repeat='photo in artist.photo' class="ngRepeatsEven col-sm-2" >
+          <img src="{{photo.content}}" class="thumbnail" height="100" width="100" />
+          <h5>Added By:{{photo.authorId}}</h5>
+      </div>
+        <hr width=100%>
+      <div class= "newPhotoUpload">
+        <input type="text"  placeholder= "You Are..." ng-model= "ic.newPhoto.authorId">
+        <button  class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
+      </div>
 
-    <hr width=100% >
-
-
+    <!-- <hr width=100% >
     <h3>Photos</h3>
       <div ng-repeat='photo in artist.photo' class="col-sm-2" >
-
         <img src="{{photo.content}}" class="thumbnail" height="100" width="100" />
-
-        <!-- can i put the posted by on top of the img? -->
         <p>Added By:{{photo.authorId}}</p>
-        <hr width=100% >
       </div>
-      <div>
-        <!-- <input type="text" placeholder= "Add A Photo" ng-model= "ic.newPhoto.content"> -->
+      <div class= "newPhotoUpload">
+        <input type="text"  placeholder= "You Are..." ng-model= "ic.newPhoto.authorId">
+        <button  class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
+      </div> -->
+      <!-- <div>
         <input type="text" placeholder= "Enter User Name" ng-model= "ic.newPhoto.authorId">
         <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
-        <!-- <button class ="btn" ng-click = "ic.updatePhoto()">Submit</button> -->
-      </div>
+      </div> -->
 
     <hr width=100% >
-
-
-
-
 
   <h3>Describe Artist</h3>
     <div ng-repeat='description in artist.description' class="" >
@@ -61,9 +64,7 @@
         <input type="text" placeholder= "Enter User Name" ng-model= "ic.newReview.authorId">
         <button class ="btn" ng-click = "ic.updateArtistReviews()">Submit</button>
       </div>
-
         <hr width=100% >
-
       <h3>Upcoming Shows</h3>
         <div ng-repeat='upcomingShows in artist.upcomingShows' class="" >
           <li>New Upcoming Shows: {{upcomingShows.content}}</li>
@@ -75,20 +76,7 @@
           <input type="text" placeholder= "Enter User Name" ng-model= "ic.newUpcomingShows.authorId">
           <button class ="btn" ng-click = "ic.updateUpcomingShows()">Submit</button>
         </div>
-
           <hr width=100% >
-
-
-
-
-      <!-- <textarea rows="4" cols="50" ng-model="ic.newDescription.authorId" form="usrform">
-      Enter text here...</textarea> -->
-        <!-- <input type="text" placeholder= "Add A Description" ng-model= "ic.newDescription.content">
-        <input type="text" placeholder= "Enter User Name" ng-model= "ic.newDescription.authorId">
-        <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistDetails()">Submit</button></a> -->
-
-
-
 </div>
 
   </body>

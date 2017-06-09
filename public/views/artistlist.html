@@ -5,13 +5,26 @@
     <title>ArtistList</title>
   </head>
   <body>
-    <div id="left"></div>
-    <div id="right"></div>
-
+<div id="left"></div>
+<div id="right"></div>
 <div class = "container row">
-    <div ng-repeat='data in ic.artist' class="col-sm-6" >
-      <a ng-href="#!artistview/{{data._id}}"> {{data.name}} </a>
-    </div>
+<div ng-repeat='data in ic.artist' class="col-sm-6" >
+  <div class="listView">
+    <ul>
+      <li><a ng-href="#!artistview/{{data._id}}"> {{data.name}} </a></li>
+    </ul>
+  </div>
+</div>
 </div>
   </body>
 </html>
+
+
+<!-- <div id="left"></div>
+<div id="right"></div>
+
+<div class = "container row">
+<div ng-repeat='data in ic.artist' class="col-sm-6" >
+  <a ng-href="#!artistview/{{data._id}}"> {{data.name}} </a>
+</div>
+</div> -->

@@ -3,10 +3,10 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var descriptionSchema = new Schema ({content: String, authorId: String});
-var reviewSchema = new Schema ({content: String, authorId: String});
-var upcomingShowsSchema = new Schema ({content: String, authorId: String});
-var photoSchema = new Schema ({content: String, authorId: String});
+var descriptionSchema = new Schema ({content: String, authorId: String, dateEntered:{type: Date, default: Date.now} });
+var reviewSchema = new Schema ({content: String, authorId: String, dateEntered:{type: Date, default: Date.now}});
+var upcomingShowsSchema = new Schema ({content: String, authorId: String, dateEntered:{type: Date, default: Date.now}});
+var photoSchema = new Schema ({content: String, authorId: String, dateEntered:{type: Date, default: Date.now}});
 
 
 
@@ -16,7 +16,8 @@ name: String,
 description: [descriptionSchema],
 review: [reviewSchema],
 photo: [photoSchema],
-upcomingShows: [upcomingShowsSchema]
+upcomingShows: [upcomingShowsSchema],
+dateEntered:{type: Date, default: Date.now}
 
 });
 
