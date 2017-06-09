@@ -7,20 +7,33 @@
   <body>
     <div id="left"></div>
     <div id="right"></div>
+    <div class="line"></div>
+    <h3>Add A Venue</h3>
+    <div class="line"></div>
+    <br>
+    <br>
     <div class="addVenue">
       <input type="text" size= "120" placeholder= "Venue Name"ng-model= "ic.name">
       <br>
+      <br>
       <input type="text"size= "120" placeholder= "Address" ng-model= "ic.address">
       <br>
-      <input type="text" size= "120" placeholder= "Description" ng-model= "ic.description[0].content">
       <br>
-      <input type="text" size= "120" placeholder= "Reviews and Tips" ng-model= "ic.review[0].content">
+      <input type="text" size= "120" placeholder= "Tell Us About It" ng-model= "ic.description[0].content">
+      <br>
+      <br>
+      <input type="text" size= "120" placeholder= "Tricks and Tips" ng-model= "ic.review[0].content">
+      <br>
       <br>
       <input type="text" size= "120"placeholder= "Upcoming Events" ng-model= "ic.upcomingEvent[0].content">
       <br>
-      <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
       <br>
-      <a href="#!venuelist"><button class ="btn" ng-click = "ic.addVenue()">Submit</button></a>
+    <div class="uploadPhotoButton">
+      <button class ="btn" float= "left" ng-click = "ic.uploadPhoto()">Upload A Photo</button>
+    </div>
+  </div>
+  <div class="addVenueButton">
+    <a href="#!venuelist"><button class ="btn" ng-click = "ic.addVenue()">Submit</button></a>
   </div>
   </body>
 </html>

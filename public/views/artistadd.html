@@ -5,22 +5,49 @@
     <title>ArtistAdd</title>
   </head>
 <body>
-    <p>Artist Add Page</p>
-
-      <input type="text" placeholder= "Artist Name"ng-model= "ic.name">
-      <br>
-      <!-- <input type="text" placeholder= "Description" ng-model= "ic.description[0].content"> -->
-      <textarea rows="4" cols="50" ng-model="ic.description[0].content" form="usrform">Enter description here...</textarea>
-      <!-- <input type="text" placeholder= "Description" ng-model= "ic.description[0].authorId"> -->
-      <input type="text" placeholder= "Reviews" ng-model= "ic.review[0].content">
-      <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
-      <input type="text" placeholder= "Upcoming Shows" ng-model= "ic.upcomingShows[0].content">
-    <a href="#!artistlist"><button class ="btn" ng-click = "ic.addArtist()">Submit</button></a>
+  <div id="left"></div>
+  <div id="right"></div>
+  <div class="line"></div>
+  <h3>Add An Artist</h3>
+  <div class="line"></div>
+  <br>
+  <br>
+  <div class="addVenue">
+    <input type="text" size= "120" placeholder= "Artist Name"ng-model= "ic.name">
+    <br>
+    <br>
+    <input type="text" size= "120" placeholder= "Tell Us What We Should Know" ng-model= "ic.description[0].content">
+    <br>
+    <br>
+    <input type="text" size= "120" placeholder= "Show Reviews" ng-model= "ic.review[0].content">
+    <br>
+    <br>
+    <input type="text" size= "120"placeholder= "Upcoming Shows" ng-model= "ic.upcomingShows[0].content">
+    <br>
+    <br>
+  <div class="uploadPhotoButton">
+    <button class ="btn" float= "left" ng-click = "ic.uploadPhoto()">Upload A Photo</button>
+  </div>
+  </div>
+  <div class="addArtistButton">
+  <a href="#!artistlist"><button class ="btn" ng-click = "ic.addArtist()">Submit</button></a>
+  </div>
   </body>
 </html>
 
-      <!-- <textarea rows="4" cols="50" ng-model="ic.description[0].content" form="usrform">
-      Enter text here...</textarea> -->
-        <!-- <input type="text" placeholder= "Add A Description" ng-model= "ic.newDescription.content">
-        <input type="text" placeholder= "Enter User Name" ng-model= "ic.newDescription.authorId">
-        <a href="#!artistlist"><button class ="btn" ng-click = "ic.updateArtistDetails()">Submit</button></a> -->
+
+
+
+
+
+<!--
+<p>Artist Add Page</p>
+
+  <input type="text" placeholder= "Artist Name"ng-model= "ic.name">
+  <br> -->
+  <!-- <textarea rows="4" cols="50" ng-model="ic.description[0].content" form="usrform">Enter description here...</textarea> -->
+  <!-- <input type="text" placeholder= "Tell Us About the Artist" ng-model= "ic.description[0].content">
+  <input type="text" placeholder= "Reviews" ng-model= "ic.review[0].content">
+  <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
+  <input type="text" placeholder= "Upcoming Shows" ng-model= "ic.upcomingShows[0].content">
+<a href="#!artistlist"><button class ="btn" ng-click = "ic.addArtist()">Submit</button></a> -->
