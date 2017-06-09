@@ -7,14 +7,12 @@
   <body>
     <div id="left"></div>
     <div id="right"></div>
-
 <div class = "container row">
     <div ng-repeat='data in ic.venue' class="col-sm-6" >
       <div class="listView">
         <ul>
           <li><a ng-href="#!venueview/{{data._id}}"> {{data.name}} </a></li>
         </ul>
-
       </div>
     </div>
 </div>

@@ -26,10 +26,8 @@ myApp.controller('ArtistViewController',[ '$http', '$routeParams', '$location','
        vm.artistReviews= response.data;//do the same for upcoming shows
        vm.upcomingShows= response.data;
        vm.artistPhoto= response.data;
-
      });
    }//end getArtistDetails()
-
 
 
   //  vm.updateArtist=[];

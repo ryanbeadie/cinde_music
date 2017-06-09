@@ -21,24 +21,7 @@
         <input type="text"  placeholder= "You Are..." ng-model= "ic.newPhoto.authorId">
         <button  class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
       </div>
-
-    <!-- <hr width=100% >
-    <h3>Photos</h3>
-      <div ng-repeat='photo in artist.photo' class="col-sm-2" >
-        <img src="{{photo.content}}" class="thumbnail" height="100" width="100" />
-        <p>Added By:{{photo.authorId}}</p>
-      </div>
-      <div class= "newPhotoUpload">
-        <input type="text"  placeholder= "You Are..." ng-model= "ic.newPhoto.authorId">
-        <button  class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
-      </div> -->
-      <!-- <div>
-        <input type="text" placeholder= "Enter User Name" ng-model= "ic.newPhoto.authorId">
-        <button class ="btn" ng-click = "ic.uploadPhoto()">Upload Photo</button>
-      </div> -->
-
     <hr width=100% >
-
   <h3>Describe Artist</h3>
     <div ng-repeat='description in artist.description' class="" >
       <li>{{description.content}}</li>
@@ -50,9 +33,7 @@
       <input type="text" placeholder= "Enter User Name" ng-model= "ic.newDescription.authorId">
       <button class ="btn" ng-click = "ic.updateArtistDetails()">Submit</button>
     </div>
-
     <hr width=100% >
-
       <h3>Reviews</h3>
        <div ng-repeat='review in artist.review' class="" >
         <li> {{review.content}}</li>
