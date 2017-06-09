@@ -9,7 +9,7 @@ var artist = require('./routes/artist');
 var venue = require('./routes/venue');
 
 //connect to mongoDB
-mongoose.connect('mongodb://localhost:27017/cindiemusic');
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://localhost:27017/cindiemusic');
 
 //uses
 app.use(express.static('public'));
