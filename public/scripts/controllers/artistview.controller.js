@@ -40,11 +40,12 @@ function($http, $routeParams, $location, $scope) {
      }).then(function success(response) {
       getArtistDetails().then(function (res){
       console.log('Response from getArtistDetails', response);
+      vm.newDescription.content="";
+      vm.newDescription.authorId="";
       });
     });
-    vm.newDescription.content="";
-    vm.newDescription.authorId="";
-    getArtistDetails();
+    // getArtistDetails();
+
    };//end updateArtist
 
     vm.updateArtistReviews = function(){
