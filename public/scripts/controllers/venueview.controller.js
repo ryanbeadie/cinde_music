@@ -36,7 +36,6 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
       console.log('in function updateVenueDetails');
       vm.venueDetails[0].newDetails = vm.newDescription;
       console.log('new description =' ,vm.venueDetails[0]);
-
    $http({
      method: 'PUT',
      url: '/venue/description',
@@ -54,7 +53,6 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
   console.log('in function venueReviews logging vm.VenueReviews',vm.venueReviews);
   vm.venueReviews[0].newReview = vm.newReview;
   console.log('new description =' ,vm.venueReviews[0].newReview);
-
    $http({
      method: 'PUT',
      url: '/venue/reviews',
@@ -67,11 +65,10 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
     });
  };//end updateVenueReviews
 
-
+//updateUpcomingEvent
  vm.updateUpcomingEvent = function(){
  vm.upcomingEvent[0].newUpcomingEvent = vm.newUpcomingEvent;
  console.log('new event =' ,vm.upcomingEvent[0].newUpcomingEvent);
-
   $http({
     method: 'PUT',
     url: '/venue/upcomingevents',
@@ -81,7 +78,6 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
     getVenueDetails();
     vm.newUpcomingEvent.content="";
     vm.newUpcomingEvent.authorId="";
-
    });
  };//end updateUpcomingShows
 
@@ -105,11 +101,5 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
       });
      $scope.$apply();// trigger the digest cycle or will have to click to show that it's populated
    });
-
  };// end uploadphoto
-
-
-
-
-
 }]);//end VenueViewController
