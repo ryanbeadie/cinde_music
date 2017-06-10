@@ -8,10 +8,53 @@
   color: red;
   margin-top: -200px;
 }
+.cIndie{
+  text-align: center;
+  font-family: 'Bowlby One', cursive;
+
+}
+
 .kfai{
   float: right;
   margin-right:35px;
   margin-top: -25px;
+}
+.radiok{
+  float: left;
+  margin-right:35px;
+  margin-top: -25px;
+}
+
+.kbem{
+  float: left;
+  margin-right:35px;
+  margin-top: -25px;
+}
+.kmoj{
+  float: right;
+  margin-right:35px;
+  margin-top: -25px;
+}
+
+
+.podcast{
+  text-align: center;
+}
+
+.homepageEvents{
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.podcast{
+  margin-top: 100px;
+  margin-bottom: 30px;
+}
+
+.monthlyArtist{
+  margin-top: 100px;
+  margin-bottom: 30px;
+
 }
 
 
@@ -19,6 +62,9 @@
 .btn{
 color: black;
 float: center;
+margin-left: 40px;
+margin-right: 40px;
+margin-top: 30px;
 }
 .uploadPhotoButton{
   margin-bottom: 75px;
