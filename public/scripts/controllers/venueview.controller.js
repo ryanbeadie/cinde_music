@@ -28,16 +28,13 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
        vm.upcomingEvent= response.data;
        vm.venuePhoto= response.data;
      });
-   }
-
-
+   }//end getVenueDetails
 
     vm.updateVenue=[];
 
     vm.updateVenueDescription = function(){
       console.log('in function updateVenueDetails');
       vm.venueDetails[0].newDetails = vm.newDescription;
-
       console.log('new description =' ,vm.venueDetails[0]);
 
    $http({
@@ -47,15 +44,15 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
    }).then(function success(response) {
       console.log('response from updatevenue:', response);
      getVenueDetails();
+     vm.newDescription.content="";
+     vm.newDescription.authorId="";
   });
   getVenueDetails();
   };//end updateVenueDescription
 
   vm.updateVenueReviews = function(){
   console.log('in function venueReviews logging vm.VenueReviews',vm.venueReviews);
-
   vm.venueReviews[0].newReview = vm.newReview;
-
   console.log('new description =' ,vm.venueReviews[0].newReview);
 
    $http({
@@ -65,14 +62,14 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
    }).then(function success(response) {
      console.log('response from update venue reviews:', response);
      getVenueDetails();
+     vm.newReview.content="";
+     vm.newReview.authorId="";
     });
  };//end updateVenueReviews
 
 
  vm.updateUpcomingEvent = function(){
-
  vm.upcomingEvent[0].newUpcomingEvent = vm.newUpcomingEvent;
-
  console.log('new event =' ,vm.upcomingEvent[0].newUpcomingEvent);
 
   $http({
@@ -82,34 +79,30 @@ myApp.controller('VenueViewController',[ '$http', '$routeParams', '$location','$
   }).then(function success(response) {
     console.log('response from update venue events:', response);
     getVenueDetails();
+    vm.newUpcomingEvent.content="";
+    vm.newUpcomingEvent.authorId="";
+
    });
  };//end updateUpcomingShows
 
  vm.uploadImg = filestack.init('AUz2UHIiSlKQwrkbaRwISz');
 
-
  vm.uploadPhoto = function() {
    vm.uploadImg.pick({
    }).then(function(response){
-
      console.log('upload this img', (response.filesUploaded[0].url));
-
      vm.newPhoto.content=(response.filesUploaded[0].url);
      vm.venuePhoto[0].newPhoto= vm.newPhoto;
-
      console.log('venuePhoto[0]', vm.venuePhoto[0]);
-
-
      $http({
        method: 'PUT',
        url: '/venue/photo',
        data: vm.venuePhoto[0]
-
      }).then(function success(response) {
        console.log('response from update artist photo:', response);
        getVenueDetails();
+       vm.newPhoto.authorId="";
       });
-
      $scope.$apply();// trigger the digest cycle or will have to click to show that it's populated
    });
 

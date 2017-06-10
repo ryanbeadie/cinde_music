@@ -48,5 +48,6 @@ myApp.controller('ArtistAddController',[ '$http', '$location', '$scope',  functi
       vm.photo = response.filesUploaded[0].url;
       $scope.$apply();// trigger the digest cycle or will have to click to show that it's populated
     });
+    vm.photoIsUpLoaded= "Photo Uploaded!";
   };// end uploadphoto
 }]);//end ArtistAddController

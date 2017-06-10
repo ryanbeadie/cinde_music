@@ -5,18 +5,18 @@
     <title>VenueView</title>
   </head>
   <body>
+  <div ng-repeat='venue in ic.venueDetails' class="" >
     <div id="left"></div>
     <div id="right"></div>
-    <div ng-repeat='venue in ic.venueDetails' class="" >
       <h1> {{venue.name}} </h1>
       <h2> {{venue.address}} </h2>
     <div class="line"></div>
     <h3>Photos</h3>
     <div class="line"></div>
     <div ng-repeat='photo in venue.photo' class="ngRepeatsEven col-sm-2" >
-        <img src="{{photo.content}}" class="thumbnail" height="100" width="100" />
-        <h5>Added By:{{photo.authorId}}</h5>
-        <h5>At:{{photo.dateEntered}}</h5>
+      <h5>{{photo.authorId}}</h5>
+      <h5>{{photo.dateEntered|date}}</h5>
+      <img src="{{photo.content}}" class="thumbnail" height="100" width="100" margin-left:"200px"  />
     </div>
       <hr width=100%>
     <div class= "newPhotoUpload">
@@ -27,8 +27,8 @@
       <h3>Tell Us About the {{venue.name}}</h3>
     <div class="line"></div>
     <div ng-repeat='description in venue.description' class="ngRepeatsOdd" >
-        <h5>At:{{description.dateEntered}}</h5>
-      <h5>{{description.authorId}} says:</h5>
+      <h5>{{description.authorId}}</h5>
+      <h5>{{description.dateEntered|date}}</h5>
         <ul>
           <li>{{description.content}}</li>
         </ul>
@@ -42,8 +42,8 @@
     <h3>Tips and Tricks</h3>
     <div class="line"></div>
      <div ng-repeat='review in venue.review' class="ngRepeatsEven" >
-         <h5>At:{{review.dateEntered}}</h5>
-         <h5>{{review.authorId}} wrote:</h5>
+       <h5>{{review.authorId}}</h5>
+       <h5>{{review.dateEntered|date}}</h5>
           <ul>
             <li> {{review.content}}</li>
           </ul>
@@ -57,8 +57,8 @@
     <h3>Upcoming Events</h3>
     <div class="line"></div>
       <div ng-repeat='upcomingEvent in venue.upcomingEvent' class="ngRepeatsOdd" >
-          <h5>At:{{upcomingEvent.dateEntered|date}}</h5>
-          <h5>Added By:{{upcomingEvent.authorId}}</h5>
+        <h5>{{upcomingEvent.authorId}}</h5>
+        <h5>{{upcomingEvent.dateEntered|date}}</h5>
           <ul>
             <li>{{upcomingEvent.content}}</li>
           </ul>
@@ -68,7 +68,6 @@
         <input type="text" placeholder= "Enter User Name" ng-model= "ic.newUpcomingEvent.authorId">
         <button class ="btn" ng-click = "ic.updateUpcomingEvent()">Submit</button>
       </div>
-</div>
-
-  </body>
+  </div>
+</body>
 </html>
