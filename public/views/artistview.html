@@ -5,6 +5,9 @@
     <title>ArtistView</title>
   </head>
 <body>
+  <br>
+  <br>
+  <br>
 <div ng-repeat='artist in ic.artistDetails' class="" >
   <div id="left"></div>
   <div id="right"></div>
@@ -12,10 +15,13 @@
   <div class="line"></div>
   <h3>Photos</h3>
   <div class="line"></div>
-  <div ng-repeat='photo in artist.photo' class="ngRepeatsEven col-sm-2" >
+  <div ng-repeat='photo in artist.photo' class="ngRepeatsPhotos col-sm-2" >
+
+    <img src="{{photo.content}}" class="thumbnail" height="auto" width="150" margin-left:"200px"  />
     <h5>{{photo.authorId}}</h5>
     <h5>{{photo.dateEntered|date}}</h5>
-    <img src="{{photo.content}}" class="thumbnail" height="100" width="100" margin-left:"200px"  />
+      <!-- <a style=margin-left="100px" href="{{photo.content}}" target="_blank"><img src="{{photo.content}}" style= height="100" width="100" margin-left:"300px"><a> - -->
+
   </div>
     <hr width=100%>
   <div class= "newPhotoUpload">
