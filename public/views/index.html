@@ -20,6 +20,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rock+Salt" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Patrick+Hand" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Cormorant+Garamond" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Gochi+Hand" rel="stylesheet">
 
     <!-- <base href="/"> -->
   </head>
@@ -31,17 +32,18 @@
     </div>
     <div class="buttons">
       <ul>
-        <a href="#!home"><button class ="btn">HOME</button></a>
-        <a href="#!venuelist"><button class ="btn">Venue List</button></a>
-        <a href="#!artistlist"><button class ="btn">Artist List</button></a>
-        <a href="#!venueadd"><button class ="btn">Add Venue</button></a>
-        <a href="#!artistadd"><button class ="btn">Add Artist</button></a>
-        <button class = "kfai" onclick='window.open("http://kfai.org/sites/default/stream/jplayer.html" ,  "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" )'><img src="https://upload.wikimedia.org/wikipedia/en/7/79/KFAI_logo.png" style="width:50px; height:50px; "></button>
+        <a href="#!home"><img src="assets/home.jpg" alt="" style="width:100px; height: 35px;margin-left:80px; margin-right:60px; margin-top:30px"></a>
+        <a href="#!artistlist"><img src="assets/artistlist.jpg" alt="" style="width:100px; height: 35px; margin-right:60px; margin-top:30px"></a>
+        <a href="#!venuelist"><img src="assets/venuelist.jpg" alt="" style="width:100px; height: 35px; margin-right:60px; margin-top:30px"></a>
+        <a href="#!artistadd"><img src="assets/addartist.jpeg" alt="" style="width:100px; height: 35px; margin-right:60px; margin-top:30px"></a>
+        <a href="#!venueadd"><img src="assets/addvenue.jpg" alt="" style="width:100px; height: 35px; margin-top:30px"></a>
+        <button class = "kfai" onclick='window.open("http://kfai.org/sites/default/stream/jplayer.html" ,  "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" )'><img  src="https://upload.wikimedia.org/wikipedia/en/7/79/KFAI_logo.png" class="real" style="width:50px; height:50px; "></button>
         <button class = "radiok" onclick='window.open("http://radiokstreams.cce.umn.edu:8128/;" ,  "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" )'><img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/13/Radio_K_Logo_%28KUOM%29.jpg/1200px-Radio_K_Logo_%28KUOM%29.jpg" style="width:auto; height:50px; "></button>
         <button class = "kbem" onclick='window.open("http://player.streamguys.com/kbem/sgplayer/player.php" ,  "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" )'><img src="https://www.minnpost.com/sites/default/files/asset/c/c109cw/c109cw.png" style="width:50px; height:50px; "></button>
         <button class = "kmoj" onclick='window.open("http://tunein.com/radio/KMOJ-899-s34101/?utm_source=tiEmbed&utm_medium=referral&utm_content=s34101" ,  "_blank", "toolbar=yes,scrollbars=yes,resizable=yes,top=500,left=500,width=400,height=400" )'><img src="http://kmojfm.com/wp/wp-content/uploads/Site_Graphics/KMOJ/Logo-250-Tran.png" style="width:50px; height:50px; "></button>
-
       </ul>
+
+
     </div>
   <main ng-view></main>
 </body>
